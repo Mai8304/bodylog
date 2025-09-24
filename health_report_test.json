@@ -1,0 +1,134 @@
+{
+  "基本信息": {
+    "姓名": "刘思琪",
+    "性别": "女",
+    "年龄": 27,
+    "检查日期": "2019-07-13"
+  },
+  "一般检查": {
+    "身高": {
+      "value": "161.5 cm",
+      "aliases": ["Height"]
+    },
+    "体重": {
+      "value": "56.8 kg",
+      "aliases": ["Weight"]
+    },
+    "BMI": {
+      "value": "21.8",
+      "aliases": ["体重指数", "Body Mass Index"]
+    },
+    "收缩压": {
+      "value": "114 mmHg",
+      "aliases": ["Systolic Blood Pressure", "SBP"]
+    },
+    "舒张压": {
+      "value": "68 mmHg",
+      "aliases": ["Diastolic Blood Pressure", "DBP"]
+    },
+    "腰围": {
+      "value": "70.0 cm",
+      "aliases": ["Waist Circumference"]
+    },
+    "臀围": {
+      "value": "88.0 cm",
+      "aliases": ["Hip Circumference"]
+    },
+    "腰臀比": {
+      "value": "0.80",
+      "aliases": ["Waist-Hip Ratio", "WHR"]
+    }
+  },
+  "尿常规": {
+    "尿比重": {
+      "value": "1.015",
+      "ref": "1.003-1.030",
+      "unit": "",
+      "aliases": ["Urine Specific Gravity", "USG"]
+    },
+    "酸碱度": {
+      "value": "7.5",
+      "ref": "5.4-8.4",
+      "unit": "pH",
+      "aliases": ["Urine pH"]
+    },
+    "镜检白细胞": {
+      "value": "0-0",
+      "ref": "0-5",
+      "unit": "Cell/HP",
+      "aliases": ["Urine WBC"]
+    },
+    "镜检红细胞": {
+      "value": "0-0",
+      "ref": "0-3",
+      "unit": "Cell/HP",
+      "aliases": ["Urine RBC"]
+    }
+  },
+  "血常规": {
+    "白细胞": {
+      "value": "4.95",
+      "ref": "3.5-9.5",
+      "unit": "*10^9/L",
+      "aliases": ["WBC", "White Blood Cell Count"]
+    },
+    "红细胞": {
+      "value": "4.44",
+      "ref": "3.8-5.1",
+      "unit": "*10^12/L",
+      "aliases": ["RBC", "Red Blood Cell Count"]
+    },
+    "血红蛋白": {
+      "value": "134",
+      "ref": "115-150",
+      "unit": "g/L",
+      "aliases": ["Hemoglobin", "Hb"]
+    },
+    "血小板": {
+      "value": "241.00",
+      "ref": "125-350",
+      "unit": "*10^9/L",
+      "aliases": ["Platelet Count", "PLT"]
+    }
+  },
+  "生化-肝功": {
+    "血清丙氨酸氨基转移酶": {
+      "value": "11.0",
+      "ref": "女:7-40 U/L",
+      "unit": "U/L",
+      "aliases": ["ALT", "Alanine Aminotransferase"]
+    },
+    "血清天冬氨酸氨基转移酶": {
+      "value": "29.4",
+      "ref": "女:13-35 U/L",
+      "unit": "U/L",
+      "aliases": ["AST", "Aspartate Aminotransferase"]
+    },
+    "血清γ-谷氨酰基转移酶": {
+      "value": "10.0",
+      "ref": "女:7-45 U/L",
+      "unit": "U/L",
+      "aliases": ["GGT", "Gamma-Glutamyl Transferase"]
+    }
+  },
+  "生化-肾功": {
+    "血清尿素": {
+      "value": "2.94",
+      "ref": "2.6-7.5",
+      "unit": "mmol/L",
+      "aliases": ["BUN", "Urea"]
+    },
+    "血清肌酐": {
+      "value": "67.23",
+      "ref": "41-73",
+      "unit": "umol/L",
+      "aliases": ["Creatinine", "Cr"]
+    },
+    "血清尿酸": {
+      "value": "200.0",
+      "ref": "90-357",
+      "unit": "umol/L",
+      "aliases": ["Uric Acid", "UA"]
+    }
+  }
+}

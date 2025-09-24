@@ -1,0 +1,258 @@
+{
+  "header": {
+    "title": "BodyLog ダッシュボード",
+    "account": "マイアカウント",
+    "signOut": "サインアウト",
+    "language": "言語",
+    "localeName": {
+      "zh": "中文",
+      "en": "English",
+      "ja": "日本語"
+    }
+  },
+  "auth": {
+    "layout": {
+      "subtitle": "健康診断レポートを管理するにはログインまたは登録してください"
+    },
+    "login": {
+      "title": "ログイン",
+      "subtitle": "メールとパスワード、または Google で続行します",
+      "emailLabel": "メールアドレス",
+      "passwordLabel": "パスワード",
+      "submit": "メールでログイン",
+      "google": "Google でログイン",
+      "or": "または",
+      "noAccount": "アカウントをお持ちではありませんか？",
+      "registerLink": "新規登録",
+      "errors": {
+        "email": "正しいメールアドレスを入力してください",
+        "password": "パスワードは 6 文字以上で入力してください"
+      },
+      "alert": {
+        "generic": "ログインに失敗しました。再度お試しください"
+      }
+    },
+    "register": {
+      "title": "アカウント作成",
+      "subtitle": "登録するとレポートをアップロードし AI 分析を受け取ることができます",
+      "emailLabel": "メールアドレス",
+      "passwordLabel": "パスワード",
+      "confirmLabel": "パスワード（確認）",
+      "submit": "登録する",
+      "hasAccount": "すでにアカウントをお持ちですか？",
+      "loginLink": "ログイン",
+      "errors": {
+        "email": "正しいメールアドレスを入力してください",
+        "password": "パスワードは 6 文字以上で入力してください",
+        "confirm": "パスワードが一致しません"
+      },
+      "alert": {
+        "generic": "登録に失敗しました。再度お試しください"
+      }
+    }
+  },
+  "dashboard": {
+    "nav": {
+      "overview": "概要",
+      "upload": "アップロード",
+      "reports": "レポート",
+      "analytics": "トレンド",
+      "settings": "設定"
+    },
+    "status": {
+      "uploaded": "アップロード済み",
+      "queued_extraction": "解析待機",
+      "extracting": "解析中",
+      "queued_analysis": "分析待機",
+      "analyzing": "分析中",
+      "completed": "完了",
+      "extraction_failed": "解析失敗",
+      "analysis_failed": "分析失敗"
+    },
+    "overview": {
+      "title": "BodyLog へようこそ",
+      "subtitle": "健康状態を素早く確認し、新しいレポートをアップロードしましょう。",
+      "kpi": {
+        "reports": {
+          "label": "レポート総数",
+          "description": "アップロード済み"
+        },
+        "abnormal": {
+          "label": "異常指標",
+          "description": "直近 90 日"
+        },
+        "latest": {
+          "label": "最新の健診",
+          "description": "直近で完了したレポートの日付"
+        }
+      },
+      "recent": {
+        "title": "最新のレポート",
+        "description": "日付 {date} · {status}",
+        "focusTitle": "注目ポイント",
+        "highlight": [
+          "血糖値が高め",
+          "血中脂質が異常"
+        ],
+        "abnormal": "異常指標 {count} 件",
+        "cta": "レポート一覧を見る",
+        "aiTitle": "AI 健康アドバイス",
+        "aiDescription": "最新レポートをもとに生成",
+        "aiSummary": "1 週間以内に空腹時血糖を再測定し、低脂肪・低塩の食事と有酸素運動を心掛けてください。",
+        "upload": "新しいレポートをアップロード"
+      }
+    },
+    "upload": {
+      "title": "体検レポートをアップロード",
+      "subtitle": "JPG/JPEG/PNG/BMP/PDF に対応、1 ファイルあたり最大 20MB。アップロード後に自動解析と AI 提案を行います。",
+      "formTitle": "ファイルをアップロード",
+      "formDescription": "ファイルは Supabase のプライベートバケットに暗号化保存され、本人のみがアクセスできます。",
+      "form": {
+        "fileLabel": "レポートファイル",
+        "dateLabel": "健診日（任意）",
+        "submit": "アップロードして解析",
+        "choose": "ファイルを選択",
+        "noFile": "ファイルが選択されていません",
+        "selected": "選択済み：{name}",
+        "dropHint": "ここにドラッグ＆ドロップ、またはクリックして選択"
+      },
+      "statusTitle": "解析ステータス",
+      "statusDescription": "アップロード後はキューに入り、非同期で処理されます。",
+      "status": {
+        "idle": "ファイルを選択して送信すると解析を開始します。",
+        "uploading": "安全なストレージにアップロード中...",
+        "queued": "アップロードが完了しました。解析待機列に追加され、まもなく「レポート」に表示されます。",
+        "error": "エラーが発生しました。再度お試しください。"
+      },
+      "tips": [
+        "文字が鮮明で、回転や反射がないように撮影してください。",
+        "PDF は複数ページでも対応可能です。ページごとに処理されます。",
+        "処理完了後は「レポート」でステータスと詳細を確認できます。"
+      ],
+      "errors": {
+        "type": "JPG/JPEG/PNG/BMP/PDF 形式のみアップロードできます",
+        "size": "ファイルサイズが 20MB の上限を超えています",
+        "auth": "アップロードする前にログインしてください",
+        "create": "レポートの作成に失敗しました：{message}"
+      }
+    },
+    "reports": {
+      "title": "レポート一覧",
+      "subtitle": "日付やステータスでアップロード済みレポートを絞り込みます。",
+      "uploadCta": "新しいレポートをアップロード",
+      "tableTitle": "レポート一覧",
+      "tableSubtitle": "処理が完了すると、AI アドバイスや履歴がここに表示されます。",
+      "searchPlaceholder": "日付 / 施設 / キーワードで検索...",
+      "refresh": "再読み込み",
+      "table": {
+        "date": "健診日",
+        "status": "ステータス",
+        "abnormal": "異常",
+        "source": "施設",
+        "actions": "操作",
+        "view": "詳細を見る"
+      },
+      "empty": "まだレポートがありません。まずはアップロードしてください。",
+      "loading": "レポートを読み込み中...",
+      "error": "レポートの取得に失敗しました：{message}"
+    },
+    "detail": {
+      "title": "レポート詳細",
+      "subtitle": "原本・構造化データ・AI アドバイスを確認できます。",
+      "back": "一覧に戻る",
+      "loading": "レポート詳細を読み込み中...",
+      "errorTitle": "読み込み失敗",
+      "errors": {
+        "unavailable": "レポート詳細は現在利用できません",
+        "generic": "レポートの読み込みに失敗しました"
+      },
+      "summaryTitle": "概要",
+      "summaryDescription": "日付 {date} · {status}",
+      "structuredTitle": "構造化指標",
+      "structuredEmpty": "構造化データがまだありません。処理中の可能性があります。",
+      "categories": {
+        "blood_glucose": "血糖",
+        "blood_lipids": "血中脂質",
+        "blood_pressure": "血圧",
+        "cbc": "血液検査",
+        "liver": "肝機能",
+        "renal": "腎機能",
+        "urine": "尿検査",
+        "general": "一般検査"
+      },
+      "confidence": "信頼度：{value}",
+      "flag": {
+        "normal": "正常",
+        "high": "高い",
+        "low": "低い",
+        "unknown": "確認"
+      },
+      "originalValue": "原始値：{value}",
+      "referenceRange": "参考範囲 {low} ~ {high}",
+      "aiTitle": "AI アドバイス",
+      "aiDescription": "参考情報です。医師の診断も併せて確認してください。",
+      "aiEmpty": "AI アドバイスはまだ生成されていません。後ほど再読み込みしてください。",
+      "aiSections": {
+        "overview": "概要",
+        "risks": "リスク",
+        "recommendations": "推奨"
+      },
+      "aiDisclaimer": "AI による提案であり、医療診断ではありません。",
+      "originalTitle": "原本レポート",
+      "originalDescription": "有効期限付きの署名付き URL でアクセスできます。",
+      "originalEmpty": "原本へのリンクがまだ準備できていません。しばらくしてから再度お試しください。"
+    },
+    "analytics": {
+      "title": "トレンド",
+      "subtitle": "血糖・血中脂質・血圧の推移を確認しましょう。",
+      "range": {
+        "30d": "直近 30 日",
+        "90d": "直近 90 日",
+        "1y": "今年"
+      },
+      "reload": "再読み込み",
+      "charts": {
+        "glucose": {
+          "title": "血糖（FPG）",
+          "description": "単位：mmol/L"
+        },
+        "lipids": {
+          "title": "血中脂質",
+          "description": "単位：mmol/L（TC/TG/LDL/HDL を比較）"
+        },
+        "bloodPressure": {
+          "title": "血圧",
+          "description": "単位：mmHg（収縮期と拡張期）"
+        }
+      },
+      "error": "トレンドデータの読み込みに失敗しました：{message}",
+      "placeholder": "トレンドデータはここに表示されます"
+    },
+    "settings": {
+      "title": "設定",
+      "subtitle": "言語・単位・データエクスポート／削除の設定を管理します。",
+      "languageTitle": "表示言語",
+      "languageDescription": "表示に使用する言語を選択します（デモ設定）",
+      "unitTitle": "単位系",
+      "metric": "メートル法 (mmol/L, mmHg)",
+      "imperial": "ヤード・ポンド法 (mg/dL, inHg)",
+      "save": "設定を保存",
+      "saved": "設定を保存しました（デモ）。",
+      "exportTitle": "データのエクスポート",
+      "exportDescription": "構造化データと AI アドバイスを含む JSON を出力します。PDF エクスポートは後日追加予定です。",
+      "exportButton": "準備中",
+      "deleteTitle": "アカウント削除",
+      "deleteDescription": "アカウントを削除すると、すべてのレポートが完全に削除されます。support@bodylog.ai までご連絡ください。"
+    }
+  },
+  "general": {
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました。再度お試しください"
+  },
+  "landing": {
+    "title": "BodyLog",
+    "subtitle": "健診レポートをアップロードして、構造化データと AI アドバイスを受け取りましょう。",
+    "login": "ログイン",
+    "register": "新規登録"
+  }
+}

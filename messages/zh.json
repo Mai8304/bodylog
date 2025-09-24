@@ -1,0 +1,258 @@
+{
+  "header": {
+    "title": "BodyLog 控制台",
+    "account": "我的账户",
+    "signOut": "退出",
+    "language": "语言",
+    "localeName": {
+      "zh": "中文",
+      "en": "English",
+      "ja": "日本語"
+    }
+  },
+  "auth": {
+    "layout": {
+      "subtitle": "登录或注册以管理你的体检报告"
+    },
+    "login": {
+      "title": "登录账户",
+      "subtitle": "使用邮箱密码或 Google 登录继续管理体检数据",
+      "emailLabel": "邮箱",
+      "passwordLabel": "密码",
+      "submit": "邮箱登录",
+      "google": "使用 Google 登录",
+      "or": "或",
+      "noAccount": "还没有账号？",
+      "registerLink": "立即注册",
+      "errors": {
+        "email": "请输入合法邮箱地址",
+        "password": "密码至少 6 位"
+      },
+      "alert": {
+        "generic": "登录失败，请稍后再试"
+      }
+    },
+    "register": {
+      "title": "创建账户",
+      "subtitle": "注册后即可上传体检报告并获取 AI 健康分析",
+      "emailLabel": "邮箱",
+      "passwordLabel": "密码",
+      "confirmLabel": "确认密码",
+      "submit": "注册账号",
+      "hasAccount": "已有账户？",
+      "loginLink": "去登录",
+      "errors": {
+        "email": "请输入合法邮箱地址",
+        "password": "密码至少 6 位",
+        "confirm": "两次密码不一致"
+      },
+      "alert": {
+        "generic": "注册失败，请稍后再试"
+      }
+    }
+  },
+  "dashboard": {
+    "nav": {
+      "overview": "概览",
+      "upload": "上传报告",
+      "reports": "我的报告",
+      "analytics": "趋势分析",
+      "settings": "设置"
+    },
+    "status": {
+      "uploaded": "已上传",
+      "queued_extraction": "排队解析",
+      "extracting": "解析中",
+      "queued_analysis": "排队分析",
+      "analyzing": "分析中",
+      "completed": "已完成",
+      "extraction_failed": "解析失败",
+      "analysis_failed": "分析失败"
+    },
+    "overview": {
+      "title": "欢迎回来，BodyLog 用户",
+      "subtitle": "快速总览你的健康状态，并继续上传新的体检报告。",
+      "kpi": {
+        "reports": {
+          "label": "体检报告总数",
+          "description": "累计上传的报告"
+        },
+        "abnormal": {
+          "label": "异常指标累计",
+          "description": "近 90 天异常项"
+        },
+        "latest": {
+          "label": "最后一次体检",
+          "description": "最近已完成的报告日期"
+        }
+      },
+      "recent": {
+        "title": "最近一次报告",
+        "description": "日期 {date} · {status}",
+        "focusTitle": "重点关注指标",
+        "highlight": [
+          "血糖偏高",
+          "血脂异常"
+        ],
+        "abnormal": "异常指标 {count} 项",
+        "cta": "查看报告列表",
+        "aiTitle": "AI 健康建议",
+        "aiDescription": "根据最近一次报告生成",
+        "aiSummary": "建议一周内复测空腹血糖，保持低油低盐饮食，并适量增加有氧运动。",
+        "upload": "上传新报告"
+      }
+    },
+    "upload": {
+      "title": "上传体检报告",
+      "subtitle": "支持 JPG/JPEG/PNG/BMP/PDF，单文件 ≤20MB。上传后系统会自动解析并生成 AI 建议。",
+      "formTitle": "上传文件",
+      "formDescription": "文件会加密存储在 Supabase 私有桶，仅本人可访问。",
+      "form": {
+        "fileLabel": "体检报告文件",
+        "dateLabel": "体检日期（可选）",
+        "submit": "上传并解析",
+        "choose": "选择文件",
+        "noFile": "未选择任何文件",
+        "selected": "已选择：{name}",
+        "dropHint": "拖拽文件到此或点击选择"
+      },
+      "statusTitle": "解析状态",
+      "statusDescription": "上传后系统会自动排队并异步执行。",
+      "status": {
+        "idle": "选择文件并提交后即可开始解析。",
+        "uploading": "正在上传到安全存储...",
+        "queued": "文件上传成功，已进入解析队列，稍后即可在“我的报告”查看状态。",
+        "error": "发生错误，请稍后重试"
+      },
+      "tips": [
+        "图片请确保文字清晰，避免旋转或反光。",
+        "PDF 支持多页，系统会逐页解析。",
+        "解析完成后可在“我的报告”查看状态与详情。"
+      ],
+      "errors": {
+        "type": "仅支持 JPG/JPEG/PNG/BMP/PDF 文件类型",
+        "size": "文件大小超过 20MB 限制",
+        "auth": "请先登录后再上传",
+        "create": "创建报告失败：{message}"
+      }
+    },
+    "reports": {
+      "title": "我的报告",
+      "subtitle": "按日期、状态筛选已上传的体检报告。",
+      "uploadCta": "上传新报告",
+      "tableTitle": "报告列表",
+      "tableSubtitle": "解析完成后即可查看 AI 建议和历史趋势。",
+      "searchPlaceholder": "搜索报告日期 / 来源 / 备注...",
+      "refresh": "刷新",
+      "table": {
+        "date": "体检日期",
+        "status": "状态",
+        "abnormal": "异常项",
+        "source": "来源",
+        "actions": "操作",
+        "view": "查看详情"
+      },
+      "empty": "暂无数据，请先上传体检报告",
+      "loading": "正在加载报告列表...",
+      "error": "获取报告失败：{message}"
+    },
+    "detail": {
+      "title": "报告详情",
+      "subtitle": "查看原文、结构化指标与 AI 分析结果。",
+      "back": "返回列表",
+      "loading": "正在加载报告详情...",
+      "errorTitle": "加载失败",
+      "errors": {
+        "unavailable": "报告详情暂不可用",
+        "generic": "加载报告失败"
+      },
+      "summaryTitle": "报告概要",
+      "summaryDescription": "日期 {date} · {status}",
+      "structuredTitle": "结构化指标",
+      "structuredEmpty": "暂无结构化数据，解析可能仍在进行。",
+      "categories": {
+        "blood_glucose": "血糖",
+        "blood_lipids": "血脂",
+        "blood_pressure": "血压",
+        "cbc": "血常规",
+        "liver": "肝功能",
+        "renal": "肾功能",
+        "urine": "尿检",
+        "general": "一般检查"
+      },
+      "confidence": "置信度：{value}",
+      "flag": {
+        "normal": "正常",
+        "high": "偏高",
+        "low": "偏低",
+        "unknown": "待确认"
+      },
+      "originalValue": "原始值：{value}",
+      "referenceRange": "参考区间 {low} ~ {high}",
+      "aiTitle": "AI 健康建议",
+      "aiDescription": "结果仅供参考，请结合医生建议。",
+      "aiEmpty": "暂无 AI 建议，请稍后刷新。",
+      "aiSections": {
+        "overview": "概览",
+        "risks": "风险提示",
+        "recommendations": "建议"
+      },
+      "aiDisclaimer": "该建议由 AI 生成，不构成医疗诊断。",
+      "originalTitle": "原始报告",
+      "originalDescription": "文件通过签名 URL 限时访问。",
+      "originalEmpty": "原文链接尚未生成，请稍后重试。"
+    },
+    "analytics": {
+      "title": "趋势分析",
+      "subtitle": "关注血糖、血脂、血压的历史变化，按时间范围筛选。",
+      "range": {
+        "30d": "近 30 天",
+        "90d": "近 90 天",
+        "1y": "今年内"
+      },
+      "reload": "重新加载",
+      "charts": {
+        "glucose": {
+          "title": "血糖（FPG）",
+          "description": "单位：mmol/L"
+        },
+        "lipids": {
+          "title": "血脂主要指标",
+          "description": "单位：mmol/L，对比 TC/TG/LDL/HDL"
+        },
+        "bloodPressure": {
+          "title": "血压趋势",
+          "description": "单位：mmHg，观察收缩压与舒张压"
+        }
+      },
+      "error": "加载趋势失败：{message}",
+      "placeholder": "趋势数据准备中"
+    },
+    "settings": {
+      "title": "设置",
+      "subtitle": "管理语言、时间和单位偏好，以及数据导出删除等操作。",
+      "languageTitle": "界面语言",
+      "languageDescription": "选择默认显示语言（示例设置）",
+      "unitTitle": "单位系统",
+      "metric": "公制 (mmol/L, mmHg)",
+      "imperial": "英制 (mg/dL, inHg)",
+      "save": "保存设置",
+      "saved": "设置已保存（示例）。",
+      "exportTitle": "数据导出",
+      "exportDescription": "导出将生成包含结构化数据与 AI 建议的 JSON 包，稍后补充 PDF 导出功能。",
+      "exportButton": "功能开发中",
+      "deleteTitle": "删除账户",
+      "deleteDescription": "删除后所有报告将不可恢复，如需操作请联系 support@bodylog.ai。"
+    }
+  },
+  "general": {
+    "loading": "加载中...",
+    "error": "发生错误，请稍后重试"
+  },
+  "landing": {
+    "title": "BodyLog",
+    "subtitle": "上传体检报告，自动结构化并获取 AI 健康建议。",
+    "login": "登录账户",
+    "register": "立即注册"
+  }
+}

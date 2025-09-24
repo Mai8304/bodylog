@@ -1,0 +1,258 @@
+{
+  "header": {
+    "title": "BodyLog Dashboard",
+    "account": "My Account",
+    "signOut": "Sign out",
+    "language": "Language",
+    "localeName": {
+      "zh": "中文",
+      "en": "English",
+      "ja": "日本語"
+    }
+  },
+  "auth": {
+    "layout": {
+      "subtitle": "Sign in or register to manage your health reports"
+    },
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Use email & password or Google to continue",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign in with email",
+      "google": "Continue with Google",
+      "or": "or",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Create one",
+      "errors": {
+        "email": "Please enter a valid email address",
+        "password": "Password must be at least 6 characters"
+      },
+      "alert": {
+        "generic": "Sign-in failed, please try again"
+      }
+    },
+    "register": {
+      "title": "Create account",
+      "subtitle": "Upload health reports and receive AI insights after registering",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "confirmLabel": "Confirm password",
+      "submit": "Sign up",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "errors": {
+        "email": "Please enter a valid email address",
+        "password": "Password must be at least 6 characters",
+        "confirm": "Passwords do not match"
+      },
+      "alert": {
+        "generic": "Registration failed, please try again"
+      }
+    }
+  },
+  "dashboard": {
+    "nav": {
+      "overview": "Overview",
+      "upload": "Upload",
+      "reports": "Reports",
+      "analytics": "Trends",
+      "settings": "Settings"
+    },
+    "status": {
+      "uploaded": "Uploaded",
+      "queued_extraction": "Queued for extraction",
+      "extracting": "Extracting",
+      "queued_analysis": "Queued for analysis",
+      "analyzing": "Analyzing",
+      "completed": "Completed",
+      "extraction_failed": "Extraction failed",
+      "analysis_failed": "Analysis failed"
+    },
+    "overview": {
+      "title": "Welcome back to BodyLog",
+      "subtitle": "Get a quick snapshot of your health and continue uploading new reports.",
+      "kpi": {
+        "reports": {
+          "label": "Total reports",
+          "description": "Uploaded to date"
+        },
+        "abnormal": {
+          "label": "Abnormal indicators",
+          "description": "Past 90 days"
+        },
+        "latest": {
+          "label": "Latest checkup",
+          "description": "Most recent completed report"
+        }
+      },
+      "recent": {
+        "title": "Most recent report",
+        "description": "Date {date} · {status}",
+        "focusTitle": "Key highlights",
+        "highlight": [
+          "Elevated blood glucose",
+          "Abnormal blood lipids"
+        ],
+        "abnormal": "{count} abnormal indicators",
+        "cta": "View reports",
+        "aiTitle": "AI health summary",
+        "aiDescription": "Generated from your latest report",
+        "aiSummary": "Retest fasting glucose within a week, maintain a low-fat, low-salt diet, and add regular cardio.",
+        "upload": "Upload new report"
+      }
+    },
+    "upload": {
+      "title": "Upload health report",
+      "subtitle": "Supports JPG/JPEG/PNG/BMP/PDF, single file up to 20 MB. The system parses the data and generates AI insights automatically.",
+      "formTitle": "Upload file",
+      "formDescription": "Files are stored securely in a private Supabase bucket and are only accessible to you.",
+      "form": {
+        "fileLabel": "Report file",
+        "dateLabel": "Checkup date (optional)",
+        "submit": "Upload & process",
+        "choose": "Choose file",
+        "noFile": "No file selected",
+        "selected": "Selected: {name}",
+        "dropHint": "Drag & drop a file here, or click to browse"
+      },
+      "statusTitle": "Processing status",
+      "statusDescription": "Uploads are queued and processed asynchronously.",
+      "status": {
+        "idle": "Select a file and submit to start processing.",
+        "uploading": "Uploading to secure storage...",
+        "queued": "Upload complete. The report is queued for processing and will appear under \"Reports\" shortly.",
+        "error": "Something went wrong. Please try again."
+      },
+      "tips": [
+        "Ensure text is clear and not rotated or reflective.",
+        "PDF files can contain multiple pages; each page will be processed.",
+        "After processing, check the \"Reports\" section for status and details."
+      ],
+      "errors": {
+        "type": "Only JPG/JPEG/PNG/BMP/PDF files are supported",
+        "size": "File size exceeds the 20 MB limit",
+        "auth": "Please sign in before uploading",
+        "create": "Failed to create report: {message}"
+      }
+    },
+    "reports": {
+      "title": "My reports",
+      "subtitle": "Filter uploaded reports by date and status.",
+      "uploadCta": "Upload new report",
+      "tableTitle": "Report list",
+      "tableSubtitle": "Once processing finishes you can review AI insights and history here.",
+      "searchPlaceholder": "Search by date / source / keyword...",
+      "refresh": "Refresh",
+      "table": {
+        "date": "Checkup date",
+        "status": "Status",
+        "abnormal": "Abnormal",
+        "source": "Source",
+        "actions": "Actions",
+        "view": "View detail"
+      },
+      "empty": "No reports yet. Upload your first report to get started.",
+      "loading": "Loading reports...",
+      "error": "Failed to fetch reports: {message}"
+    },
+    "detail": {
+      "title": "Report detail",
+      "subtitle": "Review the original file, structured metrics, and AI insights.",
+      "back": "Back to reports",
+      "loading": "Loading report detail...",
+      "errorTitle": "Failed to load",
+      "errors": {
+        "unavailable": "Report detail is currently unavailable",
+        "generic": "Failed to load report"
+      },
+      "summaryTitle": "Summary",
+      "summaryDescription": "Date {date} · {status}",
+      "structuredTitle": "Structured metrics",
+      "structuredEmpty": "No structured data yet. Processing may still be running.",
+      "categories": {
+        "blood_glucose": "Blood glucose",
+        "blood_lipids": "Blood lipids",
+        "blood_pressure": "Blood pressure",
+        "cbc": "Complete blood count",
+        "liver": "Liver function",
+        "renal": "Renal function",
+        "urine": "Urinalysis",
+        "general": "General"
+      },
+      "confidence": "Confidence: {value}",
+      "flag": {
+        "normal": "Normal",
+        "high": "High",
+        "low": "Low",
+        "unknown": "Review"
+      },
+      "originalValue": "Original value: {value}",
+      "referenceRange": "Reference range {low} ~ {high}",
+      "aiTitle": "AI insights",
+      "aiDescription": "For reference only. Consult your physician for medical advice.",
+      "aiEmpty": "AI insights are not available yet. Please refresh later.",
+      "aiSections": {
+        "overview": "Overview",
+        "risks": "Risks",
+        "recommendations": "Recommendations"
+      },
+      "aiDisclaimer": "Generated by AI and not a medical diagnosis.",
+      "originalTitle": "Original report",
+      "originalDescription": "Accessible via a time-limited signed URL.",
+      "originalEmpty": "The original file is not ready yet. Please try again later."
+    },
+    "analytics": {
+      "title": "Trends",
+      "subtitle": "Track glucose, lipids, and blood pressure over time.",
+      "range": {
+        "30d": "Last 30 days",
+        "90d": "Last 90 days",
+        "1y": "This year"
+      },
+      "reload": "Reload",
+      "charts": {
+        "glucose": {
+          "title": "Blood glucose (FPG)",
+          "description": "Unit: mmol/L"
+        },
+        "lipids": {
+          "title": "Blood lipids",
+          "description": "Unit: mmol/L, comparing TC/TG/LDL/HDL"
+        },
+        "bloodPressure": {
+          "title": "Blood pressure",
+          "description": "Unit: mmHg, systolic vs diastolic"
+        }
+      },
+      "error": "Failed to load trend data: {message}",
+      "placeholder": "Trend data will appear here"
+    },
+    "settings": {
+      "title": "Settings",
+      "subtitle": "Manage language, unit preferences, and data export/delete options.",
+      "languageTitle": "Language",
+      "languageDescription": "Select your preferred interface language (demo setting)",
+      "unitTitle": "Unit system",
+      "metric": "Metric (mmol/L, mmHg)",
+      "imperial": "Imperial (mg/dL, inHg)",
+      "save": "Save preferences",
+      "saved": "Preferences saved (demo only).",
+      "exportTitle": "Data export",
+      "exportDescription": "Exports will include structured data and AI insights. PDF export will be added later.",
+      "exportButton": "Coming soon",
+      "deleteTitle": "Delete account",
+      "deleteDescription": "Deleting your account removes all reports permanently. Contact support@bodylog.ai to proceed."
+    }
+  },
+  "general": {
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again."
+  },
+  "landing": {
+    "title": "BodyLog",
+    "subtitle": "Upload your health reports, get structured data and AI insights.",
+    "login": "Sign in",
+    "register": "Create account"
+  }
+}
