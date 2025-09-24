@@ -13,7 +13,6 @@ import {
 } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { createSupabaseRSCClient } from '@/lib/supabase/server'
@@ -34,39 +33,8 @@ export default async function LandingPage({ params: paramsPromise }: { params: P
 
   return (
     <main className="bg-background">
-      <header className="sticky top-0 z-30 border-b bg-background/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-3">
-          <Link href={`/${params.locale}`} className="text-base font-semibold text-foreground">
-            BodyLog
-          </Link>
-          <nav className="hidden items-center gap-5 text-sm text-muted-foreground md:flex">
-            <a href="#features" className="hover:text-foreground">
-              {t('nav.features')}
-            </a>
-            <a href="#how" className="hover:text-foreground">
-              {t('nav.how')}
-            </a>
-            <a href="#security" className="hover:text-foreground">
-              {t('nav.security')}
-            </a>
-            <a href="#faq" className="hover:text-foreground">
-              {t('nav.faq')}
-            </a>
-          </nav>
-          <div className="hidden items-center gap-2 md:flex">
-            <Button asChild variant="ghost" size="sm">
-              <Link href={`/${params.locale}/auth/login`}>{t('cta.secondary')}</Link>
-            </Button>
-            <Button asChild size="sm" className="bg-primary text-primary-foreground shadow-md">
-              <Link href={`/${params.locale}/auth/register`}>{t('cta.primary')}</Link>
-            </Button>
-          </div>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="relative overflow-hidden px-6 py-16 md:py-24">
-        <div className="absolute inset-0 -z-10 bg-background" />
         <div className="mx-auto grid w-full max-w-6xl items-center gap-10 md:grid-cols-2">
           <div className="space-y-6 text-center md:text-left">
             <h1 className="text-balance text-3xl font-semibold leading-tight text-foreground md:text-5xl">{t('hero.title')}</h1>
@@ -79,19 +47,14 @@ export default async function LandingPage({ params: paramsPromise }: { params: P
               >
                 <Link href={`/${params.locale}/auth/register`}>{t('cta.primary')}</Link>
               </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="w-full md:w-auto"
-              >
+              <Button asChild variant="outline" size="lg" className="w-full md:w-auto">
                 <Link href={`/${params.locale}/auth/login`}>{t('cta.secondary')}</Link>
               </Button>
             </div>
             <div className="mt-2 flex flex-wrap items-center justify-center gap-2 md:justify-start">
-              <Badge variant="secondary" className="gap-1"><Lock className="h-4 w-4" />{t('badges.private')}</Badge>
-              <Badge variant="secondary" className="gap-1"><Shield className="h-4 w-4" />{t('badges.secure')}</Badge>
-              <Badge variant="secondary" className="gap-1"><Brain className="h-4 w-4" />{t('badges.disclaimer')}</Badge>
+              <BadgeLike icon={<Lock className="h-4 w-4" />} label={t('badges.private')} />
+              <BadgeLike icon={<Shield className="h-4 w-4" />} label={t('badges.secure')} />
+              <BadgeLike icon={<Brain className="h-4 w-4" />} label={t('badges.disclaimer')} />
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-xl">
@@ -184,40 +147,16 @@ export default async function LandingPage({ params: paramsPromise }: { params: P
           </div>
         </div>
       </section>
-
-      {/* CTA Banner */}
-      <section className="px-6 pb-16">
-        <div className="mx-auto w-full max-w-5xl rounded-2xl border bg-gradient-to-r from-secondary to-accent p-8 text-center shadow-sm">
-          <h3 className="text-xl font-semibold text-foreground md:text-2xl">{t('value.title')}</h3>
-          <div className="mt-4 flex flex-col items-center justify-center gap-3 md:flex-row">
-            <Button asChild size="lg" className="bg-primary text-primary-foreground shadow-lg shadow-primary/20">
-              <Link href={`/${params.locale}/auth/register`}>{t('cta.primary')}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href={`/${params.locale}/auth/login`}>{t('cta.secondary')}</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t px-6 py-8">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 text-sm text-muted-foreground md:flex-row">
-          <span>© {new Date().getFullYear()} BodyLog</span>
-          <div className="flex items-center gap-4">
-            <a className="hover:text-foreground" href="#">
-              {t('footer.privacy')}
-            </a>
-            <a className="hover:text-foreground" href="#">
-              {t('footer.terms')}
-            </a>
-            <a className="hover:text-foreground" href="mailto:support@bodylog.ai">
-              {t('footer.contact')}
-            </a>
-          </div>
-        </div>
-      </footer>
     </main>
+  )
+}
+
+function BadgeLike({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1 rounded-full border border-border bg-muted px-2.5 py-1 text-xs text-muted-foreground">
+      {icon}
+      {label}
+    </span>
   )
 }
 
@@ -298,3 +237,4 @@ function TrustItem({ icon, text }: { icon: React.ReactNode; text: string }) {
     </div>
   )
 }
+
