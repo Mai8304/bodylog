@@ -14,15 +14,17 @@ const navItems: DashboardNavConfigItem[] = [
 
 export default async function DashboardLayout({
   children,
-  params
+  params: paramsPromise
 }: {
   children: ReactNode
-  params: { locale: string }
+  params: Promise<{ locale: string }>
 }) {
   const supabase = createSupabaseServerClient()
   const {
     data: { session }
   } = await supabase.auth.getSession()
+
+  const params = await paramsPromise
 
   if (!session) {
     redirect(`/${params.locale}/auth/login`)
