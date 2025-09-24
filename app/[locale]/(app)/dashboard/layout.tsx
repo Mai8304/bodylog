@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { redirect } from 'next/navigation'
 
 import { DashboardShell, type DashboardNavConfigItem } from '@/components/layout/dashboard-shell'
-import { createSupabaseServerClient } from '@/lib/supabase/server'
+import { createSupabaseRSCClient } from '@/lib/supabase/server'
 
 const navItems: DashboardNavConfigItem[] = [
   { titleKey: 'overview', href: '/dashboard', icon: 'overview' },
@@ -19,7 +19,7 @@ export default async function DashboardLayout({
   children: ReactNode
   params: Promise<{ locale: string }>
 }) {
-  const supabase = createSupabaseServerClient()
+  const supabase = createSupabaseRSCClient()
   const {
     data: { session }
   } = await supabase.auth.getSession()

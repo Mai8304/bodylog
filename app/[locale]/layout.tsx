@@ -6,7 +6,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
 import { SessionProvider } from '@/components/providers/session-provider'
-import { createSupabaseServerClient } from '@/lib/supabase/server'
+import { createSupabaseRSCClient } from '@/lib/supabase/server'
 
 export const metadata: Metadata = {
   title: 'BodyLog',
@@ -34,7 +34,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale)
   const messages = await getMessages({ locale })
-  const supabase = createSupabaseServerClient()
+  const supabase = createSupabaseRSCClient()
   const {
     data: { session }
   } = await supabase.auth.getSession()

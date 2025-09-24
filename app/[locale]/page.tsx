@@ -16,10 +16,10 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
-import { createSupabaseServerClient } from '@/lib/supabase/server'
+import { createSupabaseRSCClient } from '@/lib/supabase/server'
 
 export default async function LandingPage({ params: paramsPromise }: { params: Promise<{ locale: string }> }) {
-  const supabase = createSupabaseServerClient()
+  const supabase = createSupabaseRSCClient()
   const {
     data: { session }
   } = await supabase.auth.getSession()
