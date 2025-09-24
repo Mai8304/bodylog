@@ -2,7 +2,7 @@ import { cookies } from 'next/headers'
 import { createServerComponentClient, createServerActionClient, createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-type Database = any
+type Database = Record<string, never>
 
 type ServerClientOptions = {
   cookieStore?: ReturnType<typeof cookies>

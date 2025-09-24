@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight, RefreshCcw } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
@@ -22,7 +22,7 @@ export default function ReportsPage() {
   const [reports, setReports] = useState<ReportSummary[]>([])
   const [query, setQuery] = useState('')
 
-  async function fetchReports() {
+  const fetchReports = useCallback(async () => {
     setLoading(true)
     setError(null)
     try {
@@ -39,12 +39,11 @@ export default function ReportsPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
   useEffect(() => {
     void fetchReports()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [fetchReports])
 
   const statusLabel = useMemo(
     () =>

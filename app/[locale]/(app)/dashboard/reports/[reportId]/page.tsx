@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 import { FileWarning, Loader2 } from 'lucide-react'
 import Link from 'next/link'
@@ -224,7 +225,9 @@ export default function ReportDetailPage({ params }: Props) {
                     report.file_url.endsWith('.pdf') ? (
                       <iframe src={report.file_url} className="h-[600px] w-full rounded-lg border" title="report-pdf" />
                     ) : (
-                      <img src={report.file_url} alt="report" className="w-full rounded-lg border" />
+                      <div className="relative h-[600px] w-full overflow-hidden rounded-lg border">
+                        <Image src={report.file_url} alt="report" fill className="object-contain" />
+                      </div>
                     )
                   ) : (
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">

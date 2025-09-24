@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Area, AreaChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { useTranslations } from 'next-intl'
 
@@ -65,7 +65,7 @@ export default function AnalyticsPage() {
   const [error, setError] = useState<string | null>(null)
   const [range, setRange] = useState<Range>('90d')
 
-  async function loadTrends(selectedRange: Range) {
+  const loadTrends = useCallback(async (selectedRange: Range) => {
     setLoading(true)
     setError(null)
     try {
@@ -82,12 +82,11 @@ export default function AnalyticsPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
 
   useEffect(() => {
     void loadTrends(range)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [range])
+  }, [loadTrends, range])
 
   const glucose = series?.['blood_glucose.fpg'] ?? mockSeries['blood_glucose.fpg']
   const lipids = useMemo(
