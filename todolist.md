@@ -34,6 +34,7 @@
 - [x] feat(frontend-analytics): 趋势页从 `GET /api/analytics/series` 渲染血糖/血脂/血压
 - [x] feat(theme): 应用清透医疗蓝青配色（全局 CSS 变量与语义色）
 - [x] landing(theme): 首页布局与视觉更新（Hero/卖点/How/功能/FAQ/CTA/页脚）
+- [x] landing(refine): 首页样式与颜色按 `app/globals.css` token 化，并用 shadcn/ui 优化（Badge/Button/Card 等）
 - [ ] qa(e2e): 手动走查“主页→登录→上传→（状态）→详情→趋势”，记录问题
 - [ ] qa(auth-flow): 手动走查“首页→注册/登录→Dashboard→退出”，覆盖 Google 登录
 
