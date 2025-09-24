@@ -250,9 +250,83 @@
     "error": "エラーが発生しました。再度お試しください"
   },
   "landing": {
-    "title": "BodyLog",
-    "subtitle": "健診レポートをアップロードして、構造化データと AI アドバイスを受け取りましょう。",
-    "login": "ログイン",
-    "register": "新規登録"
+    "hero": {
+      "title": "レポートをアップロードして、30 秒で読みやすい AI アドバイス",
+      "subtitle": "画像/PDF に対応。OCR 不要。構造化してアーカイブ。"
+    },
+    "cta": {
+      "primary": "無料で始める",
+      "secondary": "ログイン"
+    },
+    "badges": {
+      "private": "プライベート保存",
+      "secure": "行レベルセキュリティ",
+      "disclaimer": "AI アドバイスは医療診断ではありません"
+    },
+    "value": {
+      "title": "健康データを読みやすく、活用しやすく",
+      "items": {
+        "upload": { "title": "ワンタップでアップロード", "desc": "1 ファイル 20MB まで、JPG/PNG/BMP/PDF。" },
+        "ai": { "title": "AI アドバイス", "desc": "参考範囲とフラグ付きの読みやすい提案。" },
+        "trend": { "title": "トレンド", "desc": "血糖・血中脂質・血圧などの推移。" }
+      }
+    },
+    "how": {
+      "title": "仕組み",
+      "steps": {
+        "upload": { "title": "アップロード", "desc": "画像または PDF の健診レポートを選択。" },
+        "extract": { "title": "抽出", "desc": "マルチモーダルで直接解析（OCR 不要）。" },
+        "insight": { "title": "アドバイス", "desc": "参考範囲とフラグを踏まえた読みやすい要約。" },
+        "history": { "title": "履歴", "desc": "データを保存し、可視化します。" }
+      }
+    },
+    "features": {
+      "title": "特長",
+      "items": {
+        "ocrFree": { "title": "OCR 不要", "desc": "画像/PDF を直接解析。" },
+        "multimodal": { "title": "構造化 JSON", "desc": "統一キーと単位で保存。" },
+        "privacy": { "title": "プライバシー重視", "desc": "プライベートバケット＋署名 URL。本人のみアクセス可能。" },
+        "trendCharts": { "title": "トレンドグラフ", "desc": "主要指標の時系列を可視化。" },
+        "multilang": { "title": "多言語", "desc": "中文 / English / 日本語。" },
+        "exportLater": { "title": "エクスポート（後日）", "desc": "CSV/PDF でアーカイブを出力。" }
+      }
+    },
+    "trust": {
+      "title": "信頼と安全",
+      "items": {
+        "storage": "Supabase のプライベート保存",
+        "rls": "Postgres 行レベルセキュリティ",
+        "exportDelete": "データのエクスポート/削除は自分で管理",
+        "aiDisclaimer": "AI アドバイスは医療診断ではありません"
+      }
+    },
+    "nav": {
+      "features": "特長",
+      "how": "仕組み",
+      "security": "安全",
+      "faq": "FAQ"
+    },
+    "faq": {
+      "title": "よくある質問",
+      "items": [
+        {
+          "q": "対応しているファイル形式と容量は？",
+          "a": "JPG/PNG/BMP/PDF に対応、1 ファイルあたり最大 20MB です。"
+        },
+        {
+          "q": "OCR のインストールは必要？",
+          "a": "不要です。マルチモーダルモデルで直接解析します。"
+        },
+        {
+          "q": "データは安全ですか？",
+          "a": "ファイルはプライベートバケットに保存され、署名付き URL でアクセス。DB は行レベルセキュリティで本人のみ参照できます。"
+        }
+      ]
+    },
+    "footer": {
+      "privacy": "プライバシー",
+      "terms": "利用規約",
+      "contact": "お問い合わせ"
+    }
   }
 }

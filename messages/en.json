@@ -250,9 +250,83 @@
     "error": "Something went wrong. Please try again."
   },
   "landing": {
-    "title": "BodyLog",
-    "subtitle": "Upload your health reports, get structured data and AI insights.",
-    "login": "Sign in",
-    "register": "Create account"
+    "hero": {
+      "title": "Upload your report, get readable AI insights in 30 seconds",
+      "subtitle": "Images/PDF supported. No OCR needed. Data is structured and archived."
+    },
+    "cta": {
+      "primary": "Get started for free",
+      "secondary": "Sign in"
+    },
+    "badges": {
+      "private": "Private storage",
+      "secure": "Row-level security",
+      "disclaimer": "AI insights are not medical advice"
+    },
+    "value": {
+      "title": "Make your health data readable and useful",
+      "items": {
+        "upload": { "title": "One-tap upload", "desc": "Single file ≤ 20MB, JPG/PNG/BMP/PDF." },
+        "ai": { "title": "AI insights", "desc": "Readable suggestions with references and flags." },
+        "trend": { "title": "Trends", "desc": "Track glucose, lipids and blood pressure over time." }
+      }
+    },
+    "how": {
+      "title": "How it works",
+      "steps": {
+        "upload": { "title": "Upload", "desc": "Pick an image or PDF report." },
+        "extract": { "title": "Extract", "desc": "Multimodal parsing directly—no local OCR." },
+        "insight": { "title": "Insights", "desc": "Readable AI summary with ranges and flags." },
+        "history": { "title": "History", "desc": "Archive and visualize your data." }
+      }
+    },
+    "features": {
+      "title": "Features",
+      "items": {
+        "ocrFree": { "title": "OCR‑free", "desc": "Parse images/PDF with multimodal models." },
+        "multimodal": { "title": "Structured JSON", "desc": "Unified keys and units for storage." },
+        "privacy": { "title": "Privacy‑first", "desc": "Private bucket + signed URLs, only you can access." },
+        "trendCharts": { "title": "Trend charts", "desc": "Recharts time series for key metrics." },
+        "multilang": { "title": "Multi‑language", "desc": "中文 / English / 日本語." },
+        "exportLater": { "title": "Export (later)", "desc": "CSV/PDF export of your archive." }
+      }
+    },
+    "trust": {
+      "title": "Trust & Security",
+      "items": {
+        "storage": "Supabase private storage",
+        "rls": "Postgres Row‑Level Security",
+        "exportDelete": "Self‑service export & delete",
+        "aiDisclaimer": "AI insights are not a diagnosis"
+      }
+    },
+    "nav": {
+      "features": "Features",
+      "how": "How it works",
+      "security": "Security",
+      "faq": "FAQ"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Which files are supported? Any limits?",
+          "a": "JPG/PNG/BMP/PDF are supported; single file up to 20 MB."
+        },
+        {
+          "q": "Do I need to install OCR?",
+          "a": "No. Reports are parsed directly with a multimodal model."
+        },
+        {
+          "q": "Is my data safe?",
+          "a": "Files are stored in a private bucket with signed URLs; database uses row‑level security so only you can access your data."
+        }
+      ]
+    },
+    "footer": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "contact": "Contact"
+    }
   }
 }

@@ -250,9 +250,92 @@
     "error": "发生错误，请稍后重试"
   },
   "landing": {
-    "title": "BodyLog",
-    "subtitle": "上传体检报告，自动结构化并获取 AI 健康建议。",
-    "login": "登录账户",
-    "register": "立即注册"
+    "hero": {
+      "title": "上传体检报告，30 秒生成可读的 AI 健康建议",
+      "subtitle": "支持图片/PDF，无需 OCR，自动结构化并沉淀健康档案。"
+    },
+    "cta": {
+      "primary": "免费开始",
+      "secondary": "登录账户"
+    },
+    "badges": {
+      "private": "私有存储",
+      "secure": "行级安全 RLS",
+      "disclaimer": "AI 建议非医疗诊断"
+    },
+    "value": {
+      "title": "你的健康数据，更易读也更有用",
+      "items": {
+        "upload": {
+          "title": "一键上传",
+          "desc": "单文件≤20MB，支持 JPG/PNG/BMP/PDF。"
+        },
+        "ai": {
+          "title": "AI 建议",
+          "desc": "基于结构化指标输出可读建议与风险提示。"
+        },
+        "trend": {
+          "title": "趋势追踪",
+          "desc": "血糖/血脂/血压等关键指标的历史变化。"
+        }
+      }
+    },
+    "how": {
+      "title": "如何运作",
+      "steps": {
+        "upload": { "title": "上传", "desc": "选择体检报告图片或 PDF。" },
+        "extract": { "title": "抽取", "desc": "多模态模型直接读取，无需本地 OCR。" },
+        "insight": { "title": "建议", "desc": "结合参考区间生成可读 AI 建议。" },
+        "history": { "title": "历史", "desc": "沉淀数据并可视化趋势。" }
+      }
+    },
+    "features": {
+      "title": "功能亮点",
+      "items": {
+        "ocrFree": { "title": "无需 OCR", "desc": "直接用多模态模型解析图片/PDF。" },
+        "multimodal": { "title": "结构化 JSON", "desc": "统一命名与单位，规范化入库。" },
+        "privacy": { "title": "隐私优先", "desc": "私有桶+签名 URL，仅本人可见。" },
+        "trendCharts": { "title": "趋势图表", "desc": "Recharts 渲染关键指标时间序列。" },
+        "multilang": { "title": "多语言", "desc": "中文/English/日本語 自由切换。" },
+        "exportLater": { "title": "导出（后续）", "desc": "CSV/PDF 导出健康档案。" }
+      }
+    },
+    "trust": {
+      "title": "可信与安全",
+      "items": {
+        "storage": "Supabase 私有存储桶",
+        "rls": "Postgres 行级安全（RLS）",
+        "exportDelete": "数据导出与删除自助",
+        "aiDisclaimer": "AI 建议非医疗诊断"
+      }
+    },
+    "nav": {
+      "features": "功能",
+      "how": "原理",
+      "security": "安全",
+      "faq": "常见问题"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": [
+        {
+          "q": "支持哪些文件？是否有限制？",
+          "a": "支持 JPG/PNG/BMP/PDF，单文件 ≤ 20MB。"
+        },
+        {
+          "q": "需要安装 OCR 吗？",
+          "a": "不需要。本产品直接使用多模态模型解析报告内容。"
+        },
+        {
+          "q": "我的数据是否安全？",
+          "a": "你的文件存储在私有桶中，并通过签名 URL 访问；数据库采用行级安全（RLS），仅本人可见。"
+        }
+      ]
+    },
+    "footer": {
+      "privacy": "隐私",
+      "terms": "条款",
+      "contact": "联系"
+    }
   }
 }
