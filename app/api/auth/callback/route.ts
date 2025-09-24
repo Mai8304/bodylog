@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { createSupabaseRouteHandlerClient } from '@/lib/supabase/server'
+import { createSupabaseServerClient } from '@/lib/supabase/server'
 
 
 export async function GET(request: NextRequest) {
@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
   const redirectTo = requestUrl.searchParams.get('redirectTo') ?? `/${locale}/dashboard`
 
   if (code) {
-    const supabase = createSupabaseRouteHandlerClient()
+    const supabase = createSupabaseServerClient()
     await supabase.auth.exchangeCodeForSession(code)
   }
 

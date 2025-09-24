@@ -15,10 +15,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import type { ReportDetail } from '@/lib/types'
 
 interface Props {
-  params: { reportId: string }
+  params: Promise<{ reportId: string }>
 }
 
-export default function ReportDetailPage({ params }: Props) {
+export default function ReportDetailPage({ params: paramsPromise }: Props) {
+  const [reportId, setReportId] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [report, setReport] = useState<ReportDetail | null>(null)
@@ -27,11 +28,27 @@ export default function ReportDetailPage({ params }: Props) {
   const tStatus = useTranslations('dashboard.status')
 
   useEffect(() => {
+    let active = true
+    async function resolveParams() {
+      const params = await paramsPromise
+      if (active) {
+        setReportId(params.reportId)
+      }
+    }
+    void resolveParams()
+    return () => {
+      active = false
+    }
+  }, [paramsPromise])
+
+  useEffect(() => {
+    if (!reportId) return
+
     async function fetchDetail() {
       setLoading(true)
       setError(null)
       try {
-        const response = await fetch(`/api/reports/${params.reportId}`)
+        const response = await fetch(`/api/reports/${reportId}`)
         if (!response.ok) {
           const payload = await response.json().catch(() => ({}))
           throw new Error(payload.message ?? t('errors.unavailable'))
@@ -46,7 +63,7 @@ export default function ReportDetailPage({ params }: Props) {
     }
 
     void fetchDetail()
-  }, [params.reportId, t])
+  }, [reportId, t])
 
   const groupedMetrics = useMemo(() => {
     if (!report) return []
@@ -85,7 +102,7 @@ export default function ReportDetailPage({ params }: Props) {
         </Button>
       </div>
 
-      {loading ? (
+      {loading && !error ? (
         <div className="flex items-center gap-2 rounded-lg border bg-card p-6 text-sm text-muted-foreground">
           <Loader2 className="h-4 w-4 animate-spin" /> {t('loading')}
         </div>

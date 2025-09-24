@@ -5,11 +5,13 @@ import { getTranslations } from 'next-intl/server'
 import { Button } from '@/components/ui/button'
 import { createSupabaseServerClient } from '@/lib/supabase/server'
 
-export default async function LandingPage({ params }: { params: { locale: string } }) {
+export default async function LandingPage({ params: paramsPromise }: { params: Promise<{ locale: string }> }) {
   const supabase = createSupabaseServerClient()
   const {
     data: { session }
   } = await supabase.auth.getSession()
+
+  const params = await paramsPromise
 
   if (session) {
     redirect(`/${params.locale}/dashboard`)

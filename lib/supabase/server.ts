@@ -1,33 +1,24 @@
+
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
-import { createServerComponentClient, createServerActionClient, createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import type { SupabaseClient } from '@supabase/supabase-js'
 
-type Database = Record<string, never>
+export function createSupabaseServerClient() {
+  const cookieStore = cookies()
 
-type ServerClientOptions = {
-  cookieStore?: ReturnType<typeof cookies>
-}
-
-function getCookieStore() {
-  return cookies()
-}
-
-export function createSupabaseServerClient(options: ServerClientOptions = {}): SupabaseClient<Database> {
-  const cookieStore = options.cookieStore ?? getCookieStore()
-  return createServerComponentClient<Database>({
-    cookies: () => cookieStore
-  })
-}
-
-export function createSupabaseServerActionClient(options: ServerClientOptions = {}): SupabaseClient<Database> {
-  const cookieStore = options.cookieStore ?? getCookieStore()
-  return createServerActionClient<Database>({
-    cookies: () => cookieStore
-  })
-}
-
-export function createSupabaseRouteHandlerClient(): SupabaseClient<Database> {
-  return createRouteHandlerClient<Database>({
-    cookies
+  return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+    cookies: {
+      async get(name: string) {
+        const store = await cookieStore
+        return store.get(name)?.value
+      },
+      async set(name: string, value: string, options: CookieOptions) {
+        const store = await cookieStore
+        store.set({ name, value, ...options })
+      },
+      async remove(name: string, options: CookieOptions) {
+        const store = await cookieStore
+        store.set({ name, value: '', ...options })
+      }
+    }
   })
 }
