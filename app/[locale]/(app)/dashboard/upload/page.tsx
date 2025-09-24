@@ -49,7 +49,7 @@ export default function UploadPage() {
     defaultValues: { collectedAt: new Date().toISOString().slice(0, 10), file: null }
   })
 
-  const tips = t.raw<string[]>('tips') ?? []
+  const tips = (t.raw('tips') as string[]) ?? []
 
   function resetStatusIndicators() {
     setStatus('idle')
