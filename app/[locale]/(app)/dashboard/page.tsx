@@ -21,7 +21,7 @@ export default function DashboardOverviewPage() {
     []
   )
 
-  const recentHighlight = t.raw<string[]>('recent.highlight') ?? []
+  const recentHighlight = (t.raw('recent.highlight') as string[]) ?? []
   const recentStatus = tStatus('completed')
 
   return (
