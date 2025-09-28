@@ -300,11 +300,12 @@
         "exportLater": { "title": "导出（后续）", "desc": "CSV/PDF 导出健康档案。" }
       }
     },
-    "trust": {
-      "title": "可信与安全",
-      "items": {
-        "storage": "Supabase 私有存储桶",
-        "rls": "Postgres 行级安全（RLS）",
+  "trust": {
+    "title": "可信与安全",
+    "subtitle": "Supabase Storage + RLS + 短时效签名 URL + OpenRouter 审计日志，保障隐私与可追溯。",
+    "items": {
+      "storage": "Supabase 私有存储桶",
+      "rls": "Postgres 行级安全（RLS）",
         "exportDelete": "数据导出与删除自助",
         "aiDisclaimer": "AI 建议非医疗诊断"
       }

@@ -291,10 +291,11 @@
         "exportLater": { "title": "エクスポート（後日）", "desc": "CSV/PDF でアーカイブを出力。" }
       }
     },
-    "trust": {
-      "title": "信頼と安全",
-      "items": {
-        "storage": "Supabase のプライベート保存",
+  "trust": {
+    "title": "信頼と安全",
+    "subtitle": "Supabase Storage と RLS、短期間の署名付き URL、OpenRouter の監査ログでプライバシーと追跡性を確保します。",
+    "items": {
+      "storage": "Supabase のプライベート保存",
         "rls": "Postgres 行レベルセキュリティ",
         "exportDelete": "データのエクスポート/削除は自分で管理",
         "aiDisclaimer": "AI アドバイスは医療診断ではありません"

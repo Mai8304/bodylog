@@ -291,11 +291,12 @@
         "exportLater": { "title": "Export (later)", "desc": "CSV/PDF export of your archive." }
       }
     },
-    "trust": {
-      "title": "Trust & Security",
-      "items": {
-        "storage": "Supabase private storage",
-        "rls": "Postgres Row‑Level Security",
+  "trust": {
+    "title": "Trust & Security",
+    "subtitle": "Supabase Storage, RLS, short-lived signed URLs, and OpenRouter audit logs keep data private and traceable.",
+    "items": {
+      "storage": "Supabase private storage",
+      "rls": "Postgres Row‑Level Security",
         "exportDelete": "Self‑service export & delete",
         "aiDisclaimer": "AI insights are not a diagnosis"
       }

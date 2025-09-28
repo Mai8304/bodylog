@@ -36,10 +36,12 @@
 - [x] landing(theme): 首页布局与视觉更新（Hero/卖点/How/功能/FAQ/CTA/页脚）
 - [x] landing(refine): 首页样式与颜色按 `app/globals.css` token 化，并用 shadcn/ui 优化（Badge/Button/Card 等）
 - [x] landing(layout): 新增营销布局 `app/[locale]/(marketing)/layout.tsx`（Header→Main→Newsletter→Footer），迁移首页至 `(marketing)/page.tsx`，不影响 Dashboard 布局
+- [x] landing(ux): 对标 `fig-stream-64151484` 风格迭代首页视觉与排版
 - [ ] qa(e2e): 手动走查“主页→登录→上传→（状态）→详情→趋势”，记录问题
 - [ ] qa(auth-flow): 手动走查“首页→注册/登录→Dashboard→退出”，覆盖 Google 登录
 
 ## Phase B（并行/辅助）
+- [x] chore(mcp): 检查 MCP 工具状态（context7 / sequential-thinking / playwright）
 - [ ] feat(i18n): 集成 `next-intl` 词条与语言切换组件
 - [ ] feat(ui): 完善 shadcn/ui 主题、表单与空状态
 - [ ] chore(test_catalog): 预填关键 canonical_key（GLU、TC/TG/LDL/HDL、SBP/DBP 等）
